@@ -1,10 +1,16 @@
-import { DioAccount } from "./DioAccount"
+import { DioAccount } from "./model/DioAccount"
 
-export class PeopleAccount extends DioAccount {
-  doc_id: number
+export { PeopleAccount };
 
-  constructor(doc_id: number, name: string, accountNumber: number){
-    super(name, accountNumber)
-    this.doc_id = doc_id
-  }
+class PeopleAccount extends DioAccount {
+    private doc_id: number
+
+    constructor(doc_id: number, name: string, accountNumber: number){
+        super(name, accountNumber)
+        this.doc_id = doc_id
+    };
+
+    public getDoc():number {
+        return this.doc_id;
+    }
 }
